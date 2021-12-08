@@ -56,14 +56,14 @@
     \geometry{a4paper, 
     marginparwidth=1.15in, marginparsep=4pt,
     tmargin= 0.75in, 
-    rmargin = 1.65in, 
+    % rmargin = 1.65in, 
+    rmargin = 0.5in, 
     bmargin = 0.75in,
     lmargin = 0.5in}
-    \renewcommand*{\raggedrightmarginnote}{}
-    \newcommand{\years}[1]{\marginnote{\small\raggedleft #1}}
+    % \renewcommand*{\raggedrightmarginnote}{}
+    % \newcommand{\years}[1]{\marginnote{\small\raggedleft #1}}
+    \newcommand{\years}[1]{\hfill{\small\raggedleft #1}}
     
-    \newcommand{\rightheaderamnt}{-1.25in}
-    \newcommand{\leftheaderamnt}{0in}
     \newcommand{\enumleftmargin}{14pt}
 \else
     \geometry{a4paper, 
@@ -81,7 +81,7 @@
     \newcommand{\enumleftmargin}{0pt}
 \fi
 
-\newenvironment{fullpagesection}{
+\newenvironment{leftsideheader}{
     \begin{adjustwidth}{\leftheaderamnt}{\rightheaderamnt}
 }{ 
     \end{adjustwidth}
@@ -118,7 +118,7 @@ luatexbase.add_to_callback ( "process_input_buffer", highlight_word, "highlight_
     \fi
 }
 \newcommand{\talkitem}[3]{
-    \item \years{#2} ``#1''. #3.
+    \item ``#1''. #3. \years{#2}
 }
 
 % set up footers
